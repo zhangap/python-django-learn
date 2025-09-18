@@ -1,3 +1,4 @@
+{% load my_tags %}
 <h1>后面内容是模板变量：{{ name }}</h1>
 <hr/>
 <h2>以下内容是循环出来的</h2>
@@ -21,3 +22,11 @@
 {% endfor %}
 <hr>
 {% include 'include.html'%}
+<hr>
+<h2>自定义过滤器和标签</h2>
+<div>filter:{{ 3 | my_filter:5}}</div>
+<div>
+    customTag:{% my_tag1 1 2 3 %}
+</div>
+<h3>语义化标签</h3>
+{% my_html_tag "username" "username-box" %}
