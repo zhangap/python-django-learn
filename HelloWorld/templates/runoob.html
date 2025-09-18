@@ -1,4 +1,7 @@
 {% load my_tags %}
+{% load static %}
+<link rel="stylesheet" href="/static/css/runoob.css">
+<script src="/static/js/runoob.js"></script>
 <h1>后面内容是模板变量：{{ name }}</h1>
 <hr/>
 <h2>以下内容是循环出来的</h2>
@@ -30,3 +33,7 @@
 </div>
 <h3>语义化标签</h3>
 {% my_html_tag "username" "username-box" %}
+<hr>
+<h1>静态资源</h1>
+<img src="{% static 'img/girl.png' %}" alt="girl" class="girl-box">
+<img src="/static/img/girl.png" alt="girl" class="girl-box">
