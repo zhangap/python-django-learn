@@ -23,5 +23,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('hello/', views.hello, name='hello'),
     path('runoob/', views.runoob, name='runoob'),
+    path('extendTpl/', views.extendTpl, name='extendTpl'),
+    path('upload/', views.uploadFile, name='upload'),
+    path('uploadView/', views.uploadView, name='uploadView'),
 ]
 

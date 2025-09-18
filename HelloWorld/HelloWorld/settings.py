@@ -29,7 +29,18 @@ SECRET_KEY = "django-insecure-^t=7#g^3cyh3(*6$y_w_+1718x!)=!rgnrg+ez8jaj6azlb6io
 # 安全警告：生产环境必须关闭 DEBUG！
 DEBUG = True
 # 允许访问的域名（DEBUG=False 时需配置）
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0']
+# 允许跨域请求（如果使用CORS）
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:57483",
+    "http://127.0.0.1:57483",
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
+    "http://127.0.0.1:57483"
+]
+# 或者允许所有源（仅用于开发环境）
+CORS_ALLOW_ALL_ORIGINS = True  # 开发时使用，生产环境不要这样配置
+APPEND_SLASH = False
 
 # Application definition
 # 注册的 Django 应用

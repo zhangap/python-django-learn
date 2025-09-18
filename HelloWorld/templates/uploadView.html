@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FunASR 文件上传</title>
+    <style>
+        #result {
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+            border: 1px solid #999;
+            padding: 10px;
+            line-height: 30px;
+        }
+        .toolbar {
+            display:flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom:20px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="toolbar">
+    <h1>语音识别系统</h1>
+    <div>
+        <input type="file" id="audioFile" accept="audio/*"/>
+        <button onclick="uploadAudio()">上传识别</button>
+    </div>
+</div>
+<div id="result"></div>
+
+<script>
+    async function uploadAudio() {
+        const fileInput = document.getElementById('audioFile');
+        const file = fileInput.files[0];
+
+        if (!file) {
+            alert('请选择音频文件');
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('file', file);
+
+        try {
+            const response = await fetch('http://127.0.0.1:8090/upload/', {
+                method: 'POST',
+                body: formData,
+            });
+
+            const result = await response.json();
+            document.getElementById('result').innerHTML =
+                `识别结果: ${result.text} <br>置信度: ${result.confidence}`;
+
+        } catch (error) {
+            console.error('上传失败:', error);
+        }
+    }
+</script>
+</body>
+
+</html>
