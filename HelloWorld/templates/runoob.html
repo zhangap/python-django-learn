@@ -1,0 +1,23 @@
+<h1>后面内容是模板变量：{{ name }}</h1>
+<hr/>
+<h2>以下内容是循环出来的</h2>
+{% for view in views_list %}
+<p>{{forloop.counter}}-{{view}}</p>
+{% endfor %}
+<hr/>
+<h2>以下内容是条件判断</h2>
+{% if age < 18 %}
+<p>你是未成年人</p>
+{% elif age >= 18 and age <= 60 %}
+<p>你是成年人</p>
+{% else %}
+<p>垂垂老矣</p>
+{% endif %}
+<hr>
+{% for i in list_empty %}
+<p>{{i}}</p>
+{% empty %}
+空空如也
+{% endfor %}
+<hr>
+{% include 'include.html'%}
