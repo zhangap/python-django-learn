@@ -37,3 +37,7 @@
 <h1>静态资源</h1>
 <img src="{% static 'img/girl.png' %}" alt="girl" class="girl-box">
 <img src="/static/img/girl.png" alt="girl" class="girl-box">
+
+<hr>
+<h1>以下内容是从后台传过来的html字符串</h1>
+{{views_str | safe}}

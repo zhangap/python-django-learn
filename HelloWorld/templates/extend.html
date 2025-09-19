@@ -9,4 +9,7 @@
 这个是content3的内容，被子模板替换了
 {%endblock%}
 
-<div>这个是子模板里面其他内容。。。</div>
+{% block others%}
+<hr/>
+<div style="color:red;">这个是子模板里面其他内容。。。</div>
+{% endblock%}

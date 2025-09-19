@@ -39,3 +39,15 @@ STATIC_URL = '/static/'  # 静态文件URL前缀
 STATICFILES_DIRS = [BASE_DIR / 'static']  # 开发时静态文件搜索目录
 MEDIA_URL = '/media/'   # 用户上传文件URL前缀
 MEDIA_ROOT = BASE_DIR / 'media'  # 上传文件存储路径
+
+
+
+#在后端接口已经允许跨域的情况下，浏览器要解决跨域操作，可以按如下进行配置
+# Windows
+chrome.exe --disable-web-security --user-data-dir="C:/ChromeDevSession"
+
+# MacOS
+open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security
+
+# Linux
+google-chrome --disable-web-security --user-data-dir="/tmp/chrome_dev_test"

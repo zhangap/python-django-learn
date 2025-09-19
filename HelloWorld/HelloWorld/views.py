@@ -24,6 +24,9 @@ def runoob(request):
     context['views_list'] = views_list
     context['list_empty'] = []
     context['age'] = 18
+
+    context['views_str'] = "<a href='https://www.runoob.com/'>点击跳转</a>"
+
     return render(request, 'runoob.html', context=context)
 
 
