@@ -18,6 +18,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from . import TikTokApi
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -26,5 +27,9 @@ urlpatterns = [
     path('extendTpl/', views.extendTpl, name='extendTpl'),
     path('upload/', views.uploadFile, name='upload'),
     path('uploadView/', views.uploadView, name='uploadView'),
-]
 
+    # ticktok模拟数据API
+    path('api/v1/container/scan_ip/', TikTokApi.scan_ip, name='scan_ip'),
+    path('api/v1/container/check_index/', TikTokApi.check_index, name='check_index'),
+    path('api/v1/process/', TikTokApi.myProcess, name='myProcess'),
+]

@@ -5,6 +5,7 @@ from funasr import AutoModel
 import tempfile
 from django.views.decorators.csrf import csrf_exempt
 
+
 model = AutoModel(model="iic/speech_paraformer-large_asr_nat-zh-cn-16k-common-vocab8404-pytorch")
 
 
