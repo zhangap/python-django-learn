@@ -34,7 +34,6 @@ ALLOWED_HOSTS = ['*']
 CORS_ALLOWED_ORIGINS = []
 # 或者允许所有源（仅用于开发环境）
 CORS_ALLOW_ALL_ORIGINS = True  # 开发时使用，生产环境不要这样配置
-APPEND_SLASH = False
 
 # 允许携带认证信息（如cookies）
 CORS_ALLOW_CREDENTIALS = True
