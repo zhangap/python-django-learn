@@ -17,9 +17,8 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from . import views
+from . import views, testdb
 from . import TikTokApi
-
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('hello/', views.hello, name='hello'),
@@ -32,4 +31,10 @@ urlpatterns = [
     path('api/v1/container/scan_ip/', TikTokApi.scan_ip, name='scan_ip'),
     path('api/v1/container/check_index/', TikTokApi.check_index, name='check_index'),
     path('api/v1/process/', TikTokApi.myProcess, name='myProcess'),
+
+
+    path('saveDB/', testdb.saveDB),
+    path('queryDB/', testdb.queryDB),
+    path('updateDB/', testdb.updateDB),
+    path('deleteDB/', testdb.deleteDB),
 ]
