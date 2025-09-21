@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点赞系统</title>
+    <style type="text/css">
+        .box {
+            width: 800px;
+            height: 500px;
+            margin: 10px auto;
+        }
+
+        table,tr,td {
+           border-collapse:collapse;
+           text-align:center;
+        }
+        td {
+            min-width: 100px;
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <table border="1">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+                <td>点赞数</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in userList %}
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.num}}</td>
+                    <td>
+                        <a href="/dianzan?id={{user.id}}">点赞</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+</div>
+</body>
+</html>
