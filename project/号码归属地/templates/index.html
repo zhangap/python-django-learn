@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>号码归属地查询</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <style>
+        .area {
+            color: red;
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+    </style>
+    <script>
+        function onQuery(){
+            const phoneVal = document.getElementById('phone').value
+            if(!phoneVal) return;
+
+            axios.get(`/query?phone=${phoneVal}`).then(res => {
+                debugger;
+                if(res.status === 200){
+                    document.querySelector('#area').innerText = res.data?.message[0]
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<input id="phone" type="text" placeholder="请输入手机号码">
+<button onclick="onQuery()">点击查询</button>
+<hr>
+<div class="area">归属地：<span id="area"></span></div>
+</body>
+</html>
