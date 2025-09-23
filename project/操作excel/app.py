@@ -7,24 +7,24 @@ import pandas as pd
 
 def main():
     # 读取excel文件
-    data = pd.read_excel('video.xlsx')
-    data['上映时间'] = data['类别'].apply(lambda x: x.split('/')[0].strip())
-    data['类别'] = data['类别'].apply(lambda x: formatType(x))
+    data = pd.read_excel("video.xlsx")
+    data["上映时间"] = data["类别"].apply(lambda x: x.split("/")[0].strip())
+    data["类别"] = data["类别"].apply(lambda x: formatType(x))
     # print(data)
-    writer = pd.ExcelWriter('格式化后数据.xlsx')
+    writer = pd.ExcelWriter("格式化后数据.xlsx")
 
-    for country in data['国家'].unique():
+    for country in data["国家"].unique():
         print(country)
-        data[data['国家'] == country].to_excel(writer, sheet_name=country)
+        data[data["国家"] == country].to_excel(writer, sheet_name=country)
 
     writer.close()
 
 
 # 格式化类别(去掉上映时间，保留其他)
 def formatType(data):
-    res = data.split('/')
-    return '/'.join(res[1: len(res)])
+    res = data.split("/")
+    return "/".join(res[1 : len(res)])
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

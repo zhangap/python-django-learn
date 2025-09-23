@@ -18,7 +18,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+sys.path.insert(0, os.path.join(BASE_DIR, "apps"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -29,7 +29,7 @@ SECRET_KEY = "django-insecure-^t=7#g^3cyh3(*6$y_w_+1718x!)=!rgnrg+ez8jaj6azlb6io
 # 安全警告：生产环境必须关闭 DEBUG！
 DEBUG = True
 # 允许访问的域名（DEBUG=False 时需配置）
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*"]
 # 允许跨域请求（如果使用CORS）
 CORS_ALLOWED_ORIGINS = []
 # 或者允许所有源（仅用于开发环境）
@@ -40,25 +40,25 @@ CORS_ALLOW_CREDENTIALS = True
 
 # 允许的HTTP方法
 CORS_ALLOW_METHODS = [
-    'DELETE',
-    'GET',
-    'OPTIONS',
-    'PATCH',
-    'POST',
-    'PUT',
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
 ]
 
 # 允许的HTTP头
 CORS_ALLOW_HEADERS = [
-    'accept',
-    'accept-encoding',
-    'authorization',
-    'content-type',
-    'dnt',
-    'origin',
-    'user-agent',
-    'x-csrftoken',
-    'x-requested-with',
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
 ]
 
 # Application definition
@@ -103,7 +103,7 @@ TEMPLATES = [
             # 自定义标签
             "libraries": {
                 "my_tags": "templatetags.my_tags",
-            }
+            },
         },
     },
 ]

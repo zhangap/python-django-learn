@@ -10,9 +10,9 @@ print(currentPath)
 #     print(n)
 
 # 拿到第一张图片的地址
-name_list = os.listdir(os.path.join(currentPath, 'imgs'))
+name_list = os.listdir(os.path.join(currentPath, "imgs"))
 first_img_name = name_list[0]
-first_img_path = os.path.join(currentPath, 'imgs', first_img_name)
+first_img_path = os.path.join(currentPath, "imgs", first_img_name)
 img = Image.open(first_img_path)
 # 拿到第一张图片的高度和宽度
 width, height = img.size
@@ -25,13 +25,13 @@ image_row = 5
 image_col = 3
 
 # 创建新的画布
-new_img = Image.new('RGB', (image_col * width, image_row * height))
+new_img = Image.new("RGB", (image_col * width, image_row * height))
 
 for x in range(image_row):  # 行
     for y in range(image_col):  # 列
         # 打开要合成的图片
         img_index = image_col * x + y
         print(img_index)
-        temp_img = Image.open(os.path.join(currentPath, 'imgs', name_list[img_index]))
+        temp_img = Image.open(os.path.join(currentPath, "imgs", name_list[img_index]))
         new_img.paste(temp_img, (y * width, x * height))
-new_img.save(os.path.join(currentPath, 'imgs', '合成新的图片.jpg'))
+new_img.save(os.path.join(currentPath, "imgs", "合成新的图片.jpg"))
